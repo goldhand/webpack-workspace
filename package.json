@@ -1,0 +1,71 @@
+{
+  "name": "webpack-workspace",
+  "version": "0.0.1",
+  "description": "A webpack development tool for managing JavaScript projects with multiple packages (without the monorepo).",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "babel ./src -d ./lib --source-maps --ignore spec.js",
+    "prepare": "npm run build",
+    "lint": "eslint src/",
+    "test": "jest"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/goldhand/webpack-workspace.git"
+  },
+  "keywords": [
+    "webpack",
+    "plugin",
+    "workspace"
+  ],
+  "author": "Will Farley <a.will.farley@gmail.com> (https://goldhand.github.io/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/goldhand/webpack-workspace/issues"
+  },
+  "homepage": "https://github.com/goldhand/webpack-workspace#readme",
+  "eslintConfig": {
+    "env": {
+      "node": true,
+      "es6": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 9,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "globalReturn": false,
+        "impliedStrict": true,
+        "jsx": false
+      }
+    },
+    "extends": "eslint:recommended",
+    "rules": {
+      "indent": [
+        2,
+        2,
+        {
+          "SwitchCase": 1
+        }
+      ]
+    }
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "eslint": "^4.19.1"
+  },
+  "dependencies": {
+    "glob": "^7.1.2",
+    "webpack-merge": "^4.1.2"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "stage-0"
+    ]
+  }
+}
