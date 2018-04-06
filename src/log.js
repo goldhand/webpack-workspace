@@ -12,9 +12,9 @@ function createLog(suffix) {
 }
 
 const log = {
-  error: createLog(options, '\x1b[31m⚠︎'),
-  info: createLog(options, '\x1b[36mℹ︎'),
-  log: createLog(options, '\x1b[36mℹ︎'),
+  error: createLog('\x1b[31m⚠︎'),
+  info: createLog('\x1b[36mℹ︎'),
+  log: createLog('\x1b[36mℹ︎'),
   configure(opts) {
     options = {...options, ...opts};
   },
